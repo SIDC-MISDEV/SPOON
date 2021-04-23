@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A495A83D-CBDA-4F16-910A-9BD087FD897C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spoon</RootNamespace>
+    <AssemblyName>Spoon</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\SMO\Documents\Visual Studio 2015\Projects\e-POS\e-POS\bin\Debug\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="Sap.Data.Hana.v4.5, Version=2.5.86.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\sap\hdbclient\ado.net\v4.5\Sap.Data.Hana.v4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Service\AExtract.cs" />
+    <Compile Include="Admin\View\frmExtract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\View\frmExtract.Designer.cs">
+      <DependentUpon>frmExtract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\View\frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConfig\DatabaseConfiguration.cs" />
+    <Compile Include="DBConfig\DBSql.cs" />
+    <Compile Include="DBConfig\HanaSQL.cs" />
+    <Compile Include="Inventory\Controller\TransferController.cs" />
+    <Compile Include="Inventory\Interface\ITransferView.cs" />
+    <Compile Include="Inventory\Model\Document.cs" />
+    <Compile Include="Inventory\Model\DocumentLines.cs" />
+    <Compile Include="Inventory\Model\DocumentTypes.cs" />
+    <Compile Include="Inventory\Model\Items.cs" />
+    <Compile Include="Inventory\Model\Units.cs" />
+    <Compile Include="Inventory\Model\Users.cs" />
+    <Compile Include="Inventory\Service\ATransaction.cs" />
+    <Compile Include="Inventory\View\frmDocumentBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\View\frmDocumentBrowser.Designer.cs">
+      <DependentUpon>frmDocumentBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\View\frmPull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\View\frmPull.Designer.cs">
+      <DependentUpon>frmPull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\View\frmPurchaseRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\View\frmPurchaseRequest.Designer.cs">
+      <DependentUpon>frmPurchaseRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SIDC\ACryptoServiceProvider.cs" />
+    <Compile Include="SIDC\DataConversion.cs" />
+    <Compile Include="SIDC\Logs.cs" />
+    <Compile Include="SIDC\View\frmSpoonSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIDC\View\frmSpoonSetup.Designer.cs">
+      <DependentUpon>frmSpoonSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIDC\WaitCursor.cs" />
+    <EmbeddedResource Include="Admin\View\frmExtract.resx">
+      <DependentUpon>frmExtract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\View\frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\View\frmDocumentBrowser.resx">
+      <DependentUpon>frmDocumentBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\View\frmPull.resx">
+      <DependentUpon>frmPull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\View\frmPurchaseRequest.resx">
+      <DependentUpon>frmPurchaseRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SIDC\View\frmSpoonSetup.resx">
+      <DependentUpon>frmSpoonSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\lock.jpg" />
+    <None Include="search.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
